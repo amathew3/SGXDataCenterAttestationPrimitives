@@ -736,6 +736,7 @@ tdx_attest_error_t tdx_att_get_quote(
     arg.buf = (__u64)p_get_quote_blob;
     arg.len = REQ_BUF_SIZE;
 
+    fprintf(stdout, "\nBefore the TDX_CMD_GET_QUOTE ioctl call\n");
     ioctl_ret = ioctl(devfd, TDX_CMD_GET_QUOTE, &arg);
     if (EBUSY == ioctl_ret) {
         TDX_TRACE;
