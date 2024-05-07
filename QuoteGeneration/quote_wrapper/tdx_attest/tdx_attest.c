@@ -180,6 +180,11 @@ static unsigned int get_vsock_port(void)
 #ifdef DEBUG
             fprintf(stdout, "\nGet the vsock port number [%u]\n", port);
 #endif
+	    FILE *fptr;
+	    fptr = fopen("/tmp/log.txt","w+");
+
+            fprintf(fptr, "\nmy log Get the vsock port number [%u]\n", port);
+	    fclose(fptr);
             break;
         }
     }
